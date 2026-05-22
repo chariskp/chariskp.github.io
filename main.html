@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charis Polycarpou | Creative Writer</title>
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --text-main: #1a1a1a;
+            --text-muted: #5a5a5a;
+            --accent: #8c7853;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Garamond, serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .cover-photo-container {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Placeholder image: A moody, poetic typewriter/writing desk scene */
+            background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .cover-photo:hover {
+            transform: scale(1.02);
+        }
+
+        .content {
+            padding: 20px 10px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .linkedin-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-btn:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        /* Responsive layout for mobile screens */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .cover-photo-container {
+                height: 300px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Side: Cover Image -->
+        <div class="cover-photo-container">
+            <div class="cover-photo" aria-label="Cover photo representing creative writing"></div>
+        </div>
+
+        <!-- Right Side: Text & Navigation -->
+        <div class="content">
+            <h1>Charis Polycarpou</h1>
+            <div class="subtitle">Creative Writer & Storyteller</div>
+            
+            <p>Welcome to my corner of the internet. I craft narratives, explore the architecture of language, and build worlds through words. Pull up a chair and explore my professional journey and latest creative endeavors.</p>
+            
+            <a href="https://www.linkedin.com/in/charis-polycarpou-4b0b0829a/" class="linkedin-btn" target="_blank" rel="noopener noreferrer">
+                Connect on LinkedIn
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
