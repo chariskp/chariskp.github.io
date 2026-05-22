@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charis Polycarpou | Creative Writer</title>
-
+    <title>Charis Polycarpou</title>
+    
+    <!-- Site Icon -->
     <link rel="icon" type="image/x-icon" href="pen.ico">
 
     <style>
         :root {
-            --bg-color: #fcfbf9;
-            --text-main: #1a1a1a;
-            --text-muted: #5a5a5a;
-            --accent: #8c7853;
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --accent: #766345;
+            --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -22,133 +25,147 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Garamond, serif;
             background-color: var(--bg-color);
             color: var(--text-main);
+            font-family: var(--font-sans);
             line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
-        .container {
-            max-width: 1000px;
+        .wrapper {
+            max-width: 900px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 4.5fr 5.5fr;
+            gap: 60px;
             align-items: center;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        .cover-photo-container {
+        /* Image Column */
+        .image-side {
             width: 100%;
-            height: 450px;
+            aspect-ratio: 3 / 4; /* Professional portrait aspect ratio */
             overflow: hidden;
-            border-radius: 8px;
         }
 
-        .cover-photo {
+        .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Updated to use your local JPEG file */
-            background-image: url('me_1.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s ease;
+            display: block;
         }
 
-        .cover-photo:hover {
-            transform: scale(1.02);
-        }
-
-        .content {
-            padding: 20px 10px;
+        /* Content Column */
+        .content-side {
+            display: flex;
+            flex-direction: center;
         }
 
         h1 {
-            font-family: Georgia, serif;
-            font-size: 2.5rem;
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
             font-weight: 400;
-            margin-bottom: 10px;
             letter-spacing: -0.5px;
+            margin-bottom: 4px;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--accent);
+        .title-sub {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 25px;
+            color: var(--accent);
+            margin-bottom: 24px;
             font-weight: 500;
         }
 
-        p {
+        .bio {
             color: var(--text-muted);
-            margin-bottom: 30px;
             font-size: 1.05rem;
+            margin-bottom: 32px;
+            max-width: 440px;
         }
 
-        .linkedin-btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border: 1px solid var(--text-main);
+        /* Simplified, Elegant Link List */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
             color: var(--text-main);
             text-decoration: none;
-            border-radius: 4px;
+            font-size: 1rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            width: fit-content;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
-        .linkedin-btn:hover {
-            background-color: var(--text-main);
-            color: var(--bg-color);
+        .nav-link:hover {
+            color: var(--accent);
+            transform: translateX(4px);
         }
 
-        /* Responsive layout for mobile screens */
+        .nav-link::after {
+            content: " ↗";
+            font-size: 0.85rem;
+            margin-left: 4px;
+            opacity: 0.7;
+        }
+
+        /* Responsive design for smaller devices */
         @media (max-width: 768px) {
-            .container {
+            .wrapper {
                 grid-template-columns: 1fr;
-                padding: 20px;
-                gap: 20px;
+                gap: 32px;
             }
 
-            .cover-photo-container {
-                height: 300px;
+            .image-side {
+                max-width: 400px;
+                margin: 0 auto;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Left Side: Cover Image -->
-        <div class="cover-photo-container">
-            <div class="cover-photo" aria-label="Cover photo representing creative writing"></div>
-        </div>
+    <main class="wrapper">
+        <!-- Visual Column -->
+        <section class="image-side">
+            <img src="me_1.jpg" alt="Charis Polycarpou" class="profile-img">
+        </section>
 
-        <!-- Right Side: Text & Navigation -->
-        <div class="content">
+        <!-- Information Column -->
+        <section class="content-side">
             <h1>Charis Polycarpou</h1>
-            <div class="subtitle">Creative Writer & Storyteller</div>
+            <p class="title-sub">Creative Writer & Artist</p>
             
-            <p>Welcome to my corner of the internet. I craft narratives, explore the architecture of language, and build worlds through words. Pull up a chair and explore my professional journey and latest creative endeavors.</p>
+            <p class="bio">
+                Exploring narrative architecture and movement. Dedicated to crafting compelling stories and examining the intersections of language, structure, and performance.
+            </p>
             
-            <a href="https://www.linkedin.com/in/charis-polycarpou-4b0b0829a/" class="linkedin-btn" target="_blank" rel="noopener noreferrer">
-                Connect on LinkedIn
-            </a>
-        </div>
-    </div>
+            <!-- Links Area -->
+            <nav class="links-container">
+                <a href="https://www.linkedin.com/in/charis-polycarpou-4b0b0829a/" class="nav-link" target="_blank" rel="noopener noreferrer">
+                    Professional Network (LinkedIn)
+                </a>
+                <a href="https://www.rivertowndanceacademy.org/facultyandstaff.html#/" class="nav-link" target="_blank" rel="noopener noreferrer">
+                    Rivertown Dance Academy
+                </a>
+            </nav>
+        </section>
+    </main>
 
 </body>
 </html>
